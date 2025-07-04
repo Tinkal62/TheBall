@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheBall</title>
+    <link rel="icon" href="ball.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-placeholder"><img class="logo" src="logo.png" alt=""></div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#live-matches"><i class="fas fa-tv"></i> Live Scores</a></li>
+                    <li><a href="#articles"><i class="fas fa-newspaper"></i> Articles</a></li>
+                    <li><a href="#videos"><i class="fab fa-youtube"></i> Videos</a></li>
+                    <li><a href="#rankings"><i class="fas fa-trophy"></i> Rankings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Experience Cricket Like Never Before</h1>
+            <p>Get live scores, match updates, player stats, and the latest cricket news from around the world. Your ultimate cricket companion.</p>
+            <a href="#live-matches" class="btn">View Live Matches</a>
+            <a href="#newsletter" class="btn btn-outline">Subscribe</a>
+        </div>
+    </section>
+
+    <!-- Live Matches Section -->
+    <section class="section" id="live-matches">
+        <div class="section-header">
+            <h2>Live Matches</h2>
+            <a href="https://www.google.com/search?q=live+cricket+match+score&oq=live+cricket+match+score&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg80gEIODgxMmowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#sie=lg;/g/11vrh2g3kw;5;/m/021q23;mt;fp;1;;;">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="live-matches" id="matches-container">
+            <div class="loading">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="section articles" id="articles">
+        <div class="section-header">
+            <h2>Latest Articles</h2>
+            <a href="https://www.icc-cricket.com/news" >View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="articles-grid" id="articles-container">
+            <div class="loading">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="section" id="videos">
+        <div class="section-header">
+            <h2>Featured Videos</h2>
+            <a href="https://www.icc-cricket.com/videos">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="videos-grid" id="videos-container">
+            <div class="loading">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rankings Section -->
+    <section class="section rankings" id="rankings">
+        <div class="section-header">
+            <h2>ICC Rankings</h2>
+            <a href="#">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="rankings-container">
+            <div class="ranking-card">
+                <div class="ranking-header">ICC Team Rankings</div>
+                <div class="ranking-tabs">
+                    <div class="ranking-tab active" data-tab="teams-odi">ODI</div>
+                    <div class="ranking-tab" data-tab="teams-test">Test</div>
+                    <div class="ranking-tab" data-tab="teams-t20">T20</div>
+                </div>
+                <div class="ranking-table-container">
+                    <table class="ranking-table" id="teams-odi">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Team</th>
+                                <th>Matches</th>
+                                <th>Points</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5" class="loading">
+                                    <div class="spinner"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="ranking-table" id="teams-test" style="display: none;">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Team</th>
+                                <th>Matches</th>
+                                <th>Points</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5" class="loading">
+                                    <div class="spinner"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="ranking-table" id="teams-t20" style="display: none;">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Team</th>
+                                <th>Matches</th>
+                                <th>Points</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5" class="loading">
+                                    <div class="spinner"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="ranking-card">
+                <div class="ranking-header">ICC Player Rankings</div>
+                <div class="ranking-tabs">
+                    <div class="ranking-tab active" data-tab="players-batsmen">Batsmen</div>
+                    <div class="ranking-tab" data-tab="players-bowlers">Bowlers</div>
+                    <div class="ranking-tab" data-tab="players-allrounders">All-rounders</div>
+                </div>
+                <div class="ranking-table-container">
+                    <table class="ranking-table" id="players-batsmen">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="4" class="loading">
+                                    <div class="spinner"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="ranking-table" id="players-bowlers" style="display: none;">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="4" class="loading">
+                                    <div class="spinner"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="ranking-table" id="players-allrounders" style="display: none;">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="4" class="loading">
+                                    <div class="spinner"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter to receive the latest cricket news, match updates, and exclusive content directly to your inbox.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <div class="logo-placeholder"><img class="logo" src="logo.png" alt=""></div>
+                </div>
+                <p>TheBall is your ultimate destination for live cricket scores, match updates, player stats, and the latest cricket news from around the world.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#live-matches">Live Scores</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#videos">Videos</a></li>
+                    <li><a href="#rankings">Rankings</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Teams</h3>
+                <ul>
+                    <li><a href="https://www.bcci.tv/">India</a></li>
+                    <li><a href="https://www.cricket.com.au/">Australia</a></li>
+                    <li><a href="https://www.ecb.co.uk/">England</a></li>
+                    <li><a href="https://www.nzc.nz/">New Zealand</a></li>
+                    <li><a href="https://cricket.co.za/">South Africa</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Tournaments</h3>
+                <ul>
+                    <li><a href="https://www.icc-cricket.com/">ICC World Cup</a></li>
+                    <li><a href="https://www.icc-cricket.com/">T20 World Cup</a></li>
+                    <li><a href="https://www.iplt20.com/">IPL</a></li>
+                    <li><a href="https://www.bigant.com/all-game-list/ashes-cricket/">Ashes</a></li>
+                    <li><a href="https://www.icc-cricket.com/tournaments/champions-trophy-2025">Champions Trophy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TheBall. All Rights Reserved. | <a href="#" style="color: #ffae00;">Privacy Policy</a> | <a href="#" style="color: #ff6b00;">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div id="videoPlayer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
